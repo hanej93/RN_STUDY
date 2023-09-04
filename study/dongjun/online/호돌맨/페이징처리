@@ -1,0 +1,10 @@
+페이지
+    - 수동으로 만든 페이징처리.. 의미없다.
+
+    Pageable pageable
+    -> yml에서 기본페이지 설정 가능.
+
+    @RequestParam
+
+    ---> queryDsl을 통해서 페이징 처리를 하자.
+    
