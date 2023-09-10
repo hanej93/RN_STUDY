@@ -1,0 +1,51 @@
+    queryDsl을 통해서 페이징 처리를 하자.
+    queryDsl을 통해서 페이징 처리 시
+    PostSearch , PostPage 나눠서 처리해주자!
+
+    --------------------------------------
+    @ModelAttribute이란?
+    @ModelAttribute의 장점(@RequestParam와 @ModelAttribute)
+
+    @RequestParam
+    @RequestParam 어노테이션은 사용자가 요청시 전달하는 값을 Handler(Controller)의 매개변수로 1:1 맵핑할때 사용되는 어노테이션입니다.
+
+    @Controller
+    public class TestController {
+        @GetMapping("/")
+        public String getTestPage(@RequestParam("name") String name) {
+            System.out.println("이름 : " + name);
+            return "test";
+        }
+    }
+
+    예를 들어 사용자가 /?name=test 로 요청한다면, 위 핸들러의 매개변수인 name 에 "test"가 매핑됩니다.
+
+
+    @ModelAttribute
+    우선 @ModelAttribute는 메소드레벨, 메소드의 파라미터 두군데에 적용이 가능합니다. 하지만 이번 포스팅에서는, 메소드의 파라미터에 사용되는 경우에 대해서 다루도록 하겠습니다.
+
+    @ModelAttribute는 사용자가 요청시 전달하는 값을 오브젝트 형태로 매핑해주는 어노테이션입니다.
+
+    @Getter
+    @Setter
+    public class TestModel {
+        private String name;
+        private int age;
+    }
+
+    @RestController
+    public class TestController {
+        @GetMapping("/")
+        public String getTestPage(@ModelAttribute TestModel testModel) {
+            System.out.println("이름 : " + testModel.getName());
+            System.out.println("나이 : " + testModel.getAge());
+            return "test";
+        }
+    }
+
+
+    2. @ModelAttribute 사용시 장점
+    @RequestParam과 @ModelAttribute의 눈에 띄는 차이점은, 1:1 매핑이냐, 객체 매핑이냐?? 의 차이
+
+    객체 매핑일시 @ModelAttribute을 사용하면 수정하기 쉽다.
+
