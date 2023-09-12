@@ -31,3 +31,20 @@
  - 람다 캡처링: 람다 표현식에서 익명 함수가 하는 것처럼 자유 변수를 활용할 수 있다.
    ※ 람다에서 참고하는 지역 변수는 final로 선언되거나 실질적으로 final 처럼 취급되외야 한다.
     why? 인스턴스 변수는 힙에 저장되고 지역 변수는 스택에 위치한다.
+
+3.6 메서드 참조
+
+3.6.1 요약
+ - 람다와 메서드 참조 단축 표현 예제
+    (Apple apple) -> appl.getWeight()           ||  Apple::getWeight
+    () -> Thread.currentThread().dumpppStack()  ||  Thread.currentThread()::dumpStack
+    (str, i) -> str.substring(i)                ||  String::substring
+    (String s) -> System.out.println(s)         ||  System.out::println
+    (String s) -> this.isValidName(s)           ||  this::isValidName
+
+  - 세 가지 종류의 람다 표현식을 메서드 참조로 바꾸는 방법
+    (args) -> ClassName.staticMethod(args)      ||  ClassName::staticMethod
+    (arg0, rest) -> arg0.instanceMethod(rest)   ||  ClassName::instanceMethod
+    (args) -> expr.instanceMethod(args)         ||  expr.instanceMethod
+
+3.6.2 생성자 참조
