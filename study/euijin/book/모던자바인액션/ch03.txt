@@ -1,0 +1,50 @@
+3.4.1 Predicate
+- test 추상 메서드를 정의
+- 제네릭 형식의 객체 인수를 받아 불리언으로 반환
+
+3.4.2 Consumer
+- accept 추상 메서드를 정의
+- 제네릭 형식의 객체 인수를 받아 void로 반환
+
+3.4.3 Function
+- apply 추망 메서드를 정의
+- 제네릭 형식의 객체 인수를 받아 객체를 반환
+
+※ 기본형 특화
+- 박싱: 기본형을 참조형으로 변환
+- 언박싱: 참조형을 기본형으로 변환
+- 오토박싱: 박싱과 언박싱이 자동으로 이루어짐ㅁ
+
+- 박싱/언박싱 비용 소모
+: 박싱한 값은 기본형을 감싸는 래퍼이며 힙에 저장되기 때문에 메모리를 더 소비한다.
+: 기본형을 가져올 때도 메모리를 탐색하는 과정이 필요하다.
+
+-> 제네릭 함수형 인터페이스는 기본형도 제공해준다.
+ - DoublePredicate, IntConsumer, LongBinaryOperator, IntFunction 처럼 형식명을 붙여 사용
+
+3.5.3 형식 추론
+ - 자바 컴파일러는 람다 파라미터 형식을 추론할 수 있다.
+ - 가독성 향상
+ - 무조건 좋은 방법인 것은 아니다.
+
+3.5.4 지역 변수 사용
+ - 람다 캡처링: 람다 표현식에서 익명 함수가 하는 것처럼 자유 변수를 활용할 수 있다.
+   ※ 람다에서 참고하는 지역 변수는 final로 선언되거나 실질적으로 final 처럼 취급되외야 한다.
+    why? 인스턴스 변수는 힙에 저장되고 지역 변수는 스택에 위치한다.
+
+3.6 메서드 참조
+
+3.6.1 요약
+ - 람다와 메서드 참조 단축 표현 예제
+    (Apple apple) -> appl.getWeight()           ||  Apple::getWeight
+    () -> Thread.currentThread().dumpppStack()  ||  Thread.currentThread()::dumpStack
+    (str, i) -> str.substring(i)                ||  String::substring
+    (String s) -> System.out.println(s)         ||  System.out::println
+    (String s) -> this.isValidName(s)           ||  this::isValidName
+
+  - 세 가지 종류의 람다 표현식을 메서드 참조로 바꾸는 방법
+    (args) -> ClassName.staticMethod(args)      ||  ClassName::staticMethod
+    (arg0, rest) -> arg0.instanceMethod(rest)   ||  ClassName::instanceMethod
+    (args) -> expr.instanceMethod(args)         ||  expr.instanceMethod
+
+3.6.2 생성자 참조
