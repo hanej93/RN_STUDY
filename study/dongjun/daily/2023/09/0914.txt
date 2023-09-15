@@ -1,0 +1,40 @@
+원하는 자바 버전 + yml 원하는 파일 빌드 방법
+
+/data/apps/rn-healthedi/jdk-17.0.2/bin/java -jar "-Dspring.profiles.active=dev" {bootJar명}.jar
+
+/data/apps/rn-healthedi/jdk-17.0.2/bin/java -> 자바경로
+
+"-Dspring.profiles.active=dev" -> application-dev.yml
+
+
+
+
+오늘의 에러 1
+Property 'spring.profiles.active' imported from location 'class path resource [application-dev.yml]'
+is invalid in a profile specific resource [origin: class path resource [application-dev.yml]
+
+
+Spring Boot 2.4부터 application.yml
+파일의 구동 방식이 변경되었기 때문에 발생한 오류였다.
+아래와 같은 형식으로 마이그레이션해주었더니 오류가 해결되었다.
+
+
+[수정전]
+spring:
+  profiles:
+    active: dev
+
+
+[수정후]
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+오늘의 에러 2
+JPA Entity Table 대소문자 네이밍 에러
+
+naming:
+  physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  설정 후
+@Column(name="ID")과 @Table(name = "HEALTH_EDI") 을 명시해서 생성되도록 만듬
