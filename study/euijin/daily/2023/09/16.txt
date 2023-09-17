@@ -1,8 +1,8 @@
 # 토비의 스프링 부트 - 이해와원리
-https://github.com/hanej93/helloboot
 
-섹션 4. 독립 실행형 스프링 애플리케이션
-  - 자바코드 구성 정보 사용
-  - @Component 스캔
-  - Bean의 생명주기 메소드
-  - SpringBootApplication
+섹션 5. DI와 테스트, 디자인 패턴
+  - 테스트 코드를 이용한 테스트
+  - DI와 단위 테스트
+  - DI를 이용한 Decorator, Proxy 패턴
+
+https://github.com/hanej93/helloboot
