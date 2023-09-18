@@ -1,0 +1,36 @@
+
+* AuthResolver 구현해보자
+    - supportsParameter() => 파라미터타입 가져오기.
+    - resolveArgument() => UserSession 값 세팅.
+
+UserSession Dto 생성
+    - id
+
+
+Controller
+@GetMapping("/foo")
+public String foo(UserSession userSession){
+    //
+}
+
+
+------------------------------------------------------------------------
+
+* 인증이 필요한 패턴을 WebMvcConfig에서 관리를 꼭 해야할까?
+ -> 프로젝트가 커질수록 관리가 힘들것으로 생각된다.
+ -> 인증이 필요한 컨트롤러에서는 UserSession Dto를 꼭 받아야돼! 이런식으로 수정해보자.
+ -> resolveArgument() 에서 구현.
+
+
+
+
+------------------------------------------------------------------------
+
+* 헤더 인증으로 변경
+
+webRequest.getHeader("Authorization");
+// 데이터베이스 사용자 검증 로직
+
+
+참고!
+intellij -> http폴더만든 후 post.http 등 http파일 만들어서 쉽게 테스트를 할 수 있다.
