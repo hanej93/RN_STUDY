@@ -1,0 +1,9 @@
+# 토비의 스프링 부트 - 이해와원리
+
+섹션 5. DI와 테스트, 디자인 패턴
+  - 자바코드 구성 정보 사용
+  - @Component 스캔
+  - Bean의 생명주기 메소드
+  - SpringBootApplication
+
+  https://github.com/hanej93/helloboot
