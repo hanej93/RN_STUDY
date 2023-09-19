@@ -1,0 +1,7 @@
+# 토비의 스프링 부트 - 이해와원리
+
+섹션 7. 조건부 자동 구성
+  - 스타터와 Jetty 서버 구성 추가
+  - @Conditional과 Condition
+  - @Conditional 학습테스트
+  https://github.com/hanej93/helloboot
