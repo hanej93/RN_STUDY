@@ -1,0 +1,7 @@
+# 토비의 스프링 부트 - 이해와원리
+
+섹션 7. 조건부 자동 구성
+  - 커스톰 @Conditional
+  - 자동 구성 정보 대체하기
+  - 스프링 부트의 @Conditional
+  https://github.com/hanej93/helloboot
