@@ -1,0 +1,10 @@
+# 토비의 스프링 부트 - 이해와원리
+
+섹션 8. 외부 설정을 이용한 자동 구성
+  - Environment 추상화와 프로퍼티
+  - 자동 구성에 Environment 프로퍼티 적용
+  - @Value와 PropertySourcesPlaceholderConfigurer
+  - 프로퍼티 클래스의 분리
+  - 프로퍼티 빈의 후처리기 도입
+
+https://github.com/hanej93/helloboot
