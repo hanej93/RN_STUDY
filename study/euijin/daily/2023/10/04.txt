@@ -1,0 +1,6 @@
+# 토비의 스프링 부트 - 이해와원리
+
+섹션 9. Spring JDBC 자동 구성 개발
+  - Hello 리포지토리
+
+https://github.com/hanej93/helloboot
